@@ -9,5 +9,8 @@ public class Perfil {
         String nomeDigitado = seuNome.nextLine();
 
         System.out.println("Olá, "+ nomeDigitado + "! Tudo bem?");
+
+        // Essa é a maneira que o "curso" esperava:
+        //System.out.println("Olá, <seu nome>! Tudo bem?");
     }
 }

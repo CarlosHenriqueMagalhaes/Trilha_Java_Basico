@@ -5,6 +5,8 @@ public class Subtracao {
         int subtracao = (primeiroNumero - segundoNumero);
 
         System.out.println(subtracao);
+
+        // Essa é a maneira que o "curso" esperava:
         System.out.println(10-5);
     }
 }
