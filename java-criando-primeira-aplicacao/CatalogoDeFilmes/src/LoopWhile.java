@@ -22,6 +22,6 @@ public class LoopWhile {
         }else{
             System.out.println("Obrigado pela avaliação!");
         }
-        
+
     }
 }
