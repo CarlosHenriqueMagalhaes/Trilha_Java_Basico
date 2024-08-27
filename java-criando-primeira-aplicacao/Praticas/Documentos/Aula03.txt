@@ -1,5 +1,9 @@
     Vimos como usar comparações para condicionais, integrar leitura do teclado com a classe Scanner,
 explorar alternativas para condicionais e empregar estruturas de repetição como for e while.
 Esses conhecimentos constituem a base para o desenvolvimento eficaz de programas em Java.
-
-
+Outros pontos:
+   - A configurar uma aplicação para que ela escolha entre executar uma ação ou outra baseada em algum elemento;
+   - Comparações para as condicionais: igual, diferente, maior, menor;
+   - A usar a leitura do teclado com a classe Scanner;
+   - Trabalhar com alternativas para as condicionais e escolher a ideal para o caso escolhido;
+   - A utilizar estruturas de repetição com for e while.

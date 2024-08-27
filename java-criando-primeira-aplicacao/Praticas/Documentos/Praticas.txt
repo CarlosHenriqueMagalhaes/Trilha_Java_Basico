@@ -66,8 +66,11 @@ Solicite a escolha do usuário e realize o cálculo da área com base na opção
 R- CalculoAreaQuadradoECirculo
 
 4- Crie um programa que solicite ao usuário um número e exiba a tabuada desse número de 1 a 10.
+R- Tabuada
 
 5- Crie um programa que solicite ao usuário a entrada de um número inteiro. Verifique se o número é par ou ímpar
 e exiba uma mensagem correspondente.
+R- ParImpar
 
 6- Crie um programa que solicite ao usuário um número e calcule o fatorial desse número.
+R- Fatorial

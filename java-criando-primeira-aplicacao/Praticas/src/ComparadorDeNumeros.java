@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ComparadorDeNumeros {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner (System.in);
+        Scanner scanner = new Scanner(System.in);
         int primeiroNumero;
         int segundoNumero;
 
@@ -15,19 +15,18 @@ public class ComparadorDeNumeros {
         System.out.print("Digite o segundo número: ");
         segundoNumero = scanner.nextInt();
 
-        if (primeiroNumero == segundoNumero){
+        if (primeiroNumero == segundoNumero) {
             System.out.println("Os números são iguais!");
-        }
-        if (primeiroNumero != segundoNumero){
+        } else {
             System.out.println("Os números são diferentes!");
+            if (primeiroNumero > segundoNumero) {
+                System.out.println("O primeiro número é maior que o segundo: "
+                        + primeiroNumero + " > " + segundoNumero);
+            } else {
+                System.out.println("O primeiro número é menor que o segundo: "
+                        + primeiroNumero + " < " + segundoNumero);
+            }
         }
-        if (primeiroNumero > segundoNumero){
-            System.out.println("O primeiro número é maior que o segundo: "
-                    + primeiroNumero + " > " + segundoNumero);
-        }
-        if (primeiroNumero < segundoNumero){
-            System.out.println("O primeiro número é menor que o segundo: "
-                    + primeiroNumero + " < " + segundoNumero);
-        }
+
     }
 }
