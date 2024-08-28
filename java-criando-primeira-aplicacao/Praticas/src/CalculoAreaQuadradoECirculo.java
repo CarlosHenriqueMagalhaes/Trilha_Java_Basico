@@ -17,51 +17,6 @@ import java.util.Scanner;
 public class CalculoAreaQuadradoECirculo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int escolha;
-        int quadrado = 1;
-        int circulo = 2;
-
-        System.out.println("""
-                Escolha:
-                    1 - Para calcular a area de um quadrado;
-                    2 - Para calcular a area de um circulo;
-                Digite:""");
-
-        escolha = scanner.nextInt();
-
-        if (escolha == quadrado || escolha == circulo) {
-
-            if (escolha == quadrado) {
-                Scanner leituraQuadrado = new Scanner(System.in);
-                double lado;
-
-                System.out.println("Digite a base ou altura do quadrado para calcular sua area!");
-                lado = leituraQuadrado.nextDouble();
-                System.out.println("A área desse quadrado é: " + (lado * lado));
-
-            }
-            if (escolha == circulo) {
-                Scanner leituraCirculo = new Scanner(System.in);
-                double raio;
-
-                System.out.println("Digite o raio do circulo para calcular sua area!");
-                raio = leituraCirculo.nextDouble();
-                System.out.println("A área desse circulo é: " + ((raio * raio) * 3.1415));
-
-            }
-
-        } else {
-            System.out.println("Apenas 1 e 2 são validos!");
-        }
-    }
-}
-/*
-Outra maneira de fazer:
-import java.util.Scanner;
-
-public class CalculadoraArea {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
         int escolha = 0;
 
@@ -91,4 +46,3 @@ public class CalculadoraArea {
         }
     }
 }
- */
