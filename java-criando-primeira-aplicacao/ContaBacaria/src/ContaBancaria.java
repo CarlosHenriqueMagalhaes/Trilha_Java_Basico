@@ -65,7 +65,7 @@ public class ContaBancaria {
                         double valorRecebido = leituraValorAReceber.nextDouble();
 
                         if (valorRecebido >= 0) {
-                            saldo = saldo + valorRecebido;
+                            saldo += valorRecebido;
                             System.out.println("Recebido: R$" + formato.format(valorRecebido));
                         } else {
                             System.out.println("Valores negativos são inválidos para essa operação!");
@@ -75,11 +75,11 @@ public class ContaBancaria {
                         Scanner leituraTransferencia = new Scanner(System.in);
                         System.out.print("Qual o valor deseja transferir ou pagar? R$");
                         double debito = leituraTransferencia.nextDouble();
-                        if(debito<saldo){
-                            saldo-=debito;
-                            System.out.println("Pagamento/Transferência de: R$"
+                        if (debito < saldo) {
+                            saldo -= debito;
+                            System.out.println("Pagamento/Transferência de: "
                                     + formato.format(debito) + " realizada!");
-                        } else{
+                        } else {
                             System.out.println("Não há saldo suficiente para realizar esse Pagamento/Transferência");
                         }
 
