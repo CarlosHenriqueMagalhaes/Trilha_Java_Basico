@@ -15,9 +15,10 @@ public class Endereco {
         cidade = leituraEdereco.nextLine();
         System.out.println("Digite o número da sua residência: ");
         numeroDaResidencia = leituraEdereco.nextInt();
+    }
 
+    public void printEndereco(){
         System.out.println("Rua: " + rua + "\n" + "Cidade: " + cidade + "\n" +
                 "Numero da residência: " + numeroDaResidencia);
     }
-
 }

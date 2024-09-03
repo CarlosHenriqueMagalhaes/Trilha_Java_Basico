@@ -35,11 +35,15 @@ public class Pedido {
         idade = leituraDadosDoCliente.nextInt();
 
         //chamando médodo na classe Endereço:
-        new Endereco().cadastroEndereco();
+        Endereco endereco = new Endereco();
+        endereco.cadastroEndereco();
 
         System.out.println("Nº Pedido: " + numeroPedido);
         System.out.println("Nome: " + nome);
         System.out.println("Idade: " + idade);
+
+        //chamando médodo na classe Endereço:
+        endereco.printEndereco();
 
         System.out.println(dataDoPedido.toString());
         
