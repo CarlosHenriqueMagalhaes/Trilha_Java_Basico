@@ -4,6 +4,7 @@ import com.org.zero.cliente.Endereco;
 import com.org.zero.cliente.Pessoa;
 import com.org.zero.produto.Produto;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
@@ -35,6 +36,8 @@ public class Pedido {
         idade = leituraDadosDoCliente.nextInt();
 
         //chamando médodo na classe Endereço:
+        //veja sobre essa linha em Documentos:
+        //Diferenca_entre_variaveis_referencias_e_objetos_e_tipos_primitivos.txt
         Endereco endereco = new Endereco();
         endereco.cadastroEndereco();
 
@@ -45,8 +48,17 @@ public class Pedido {
         //chamando médodo na classe Endereço:
         endereco.printEndereco();
 
-        System.out.println(dataDoPedido.toString());
-        
+        System.out.println("Data do pedido: " + dataDoPedido.toString());
+
+        DecimalFormat formato = new DecimalFormat("R$ #,##0.00");
+
+        //chamando variaveis do classe Produto usando "getter e setter":
+        Produto produtoComprado = new Produto();
+        produtoComprado.setProduto("Teclado");
+        produtoComprado.setValorDoProduto(25);
+        System.out.println("Produto: " + produtoComprado.getProduto());
+        System.out.println("Valor do produto: " + formato.format(produtoComprado.getValorDoProduto()));
+
     }
 
 }
