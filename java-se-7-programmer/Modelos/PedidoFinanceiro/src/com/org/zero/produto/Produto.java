@@ -2,23 +2,23 @@ package com.org.zero.produto;
 
 public class Produto {
 
-    public String produto1;
-    public int valorDoProduto1;
+    public String produto;
+    public int valorDoProduto;
 
     //getters e setters
     public void setProduto(String produto){
-        this.produto1 = produto;
+        this.produto = produto;
     }
 
     public String getProduto() {
-        return this.produto1;
+        return this.produto;
     }
 
     public void setValorDoProduto(int valorDoProduto){
-        this.valorDoProduto1 = valorDoProduto;
+        this.valorDoProduto = valorDoProduto;
     }
 
     public int getValorDoProduto() {
-        return this.valorDoProduto1;
+        return this.valorDoProduto;
     }
 }
