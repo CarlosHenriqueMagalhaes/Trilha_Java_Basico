@@ -9,11 +9,11 @@ public class Endereco {
 
     public void cadastroEndereco() {
         Scanner leituraEdereco = new Scanner(System.in);
-        System.out.println("Digite o nome da rua: ");
+        System.out.print("Digite o nome da rua: ");
         rua = leituraEdereco.nextLine();
-        System.out.println("Digite o nome da cidade: ");
+        System.out.print("Digite o nome da cidade: ");
         cidade = leituraEdereco.nextLine();
-        System.out.println("Digite o número da sua residência: ");
+        System.out.print("Digite o número da sua residência: ");
         numeroDaResidencia = leituraEdereco.nextInt();
     }
 

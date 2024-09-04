@@ -13,7 +13,8 @@ import static com.org.zero.cliente.Pessoa.idade;
 import static com.org.zero.cliente.Pessoa.nome;
 
 public class Pedido {
-
+    // Apenas declarando a variável,
+    // nenhum objeto foi criado aqui
     Pessoa cliente;
     Endereco enderecoPedido;
     Produto produto;
@@ -30,9 +31,9 @@ public class Pedido {
         Scanner leituraDadosDoCliente = new Scanner(System.in);
 
         //chamando variaveis da classe Pessoa:
-        System.out.println("Digite o nome do cliente: ");
+        System.out.print("Digite o nome do cliente: ");
         nome = leituraDadosDoCliente.nextLine();
-        System.out.println("Digite a idade do cliente: ");
+        System.out.print("Digite a idade do cliente: ");
         idade = leituraDadosDoCliente.nextInt();
 
         //chamando médodo na classe Endereço:
@@ -53,7 +54,7 @@ public class Pedido {
         DecimalFormat formato = new DecimalFormat("R$ #,##0.00");
 
         //chamando variaveis do classe Produto usando "getter e setter":
-        Produto produtoComprado = new Produto();
+        Produto produtoComprado = new Produto(); // Agora um objeto foi criado e atribuído a variável
         produtoComprado.setProduto("Teclado");
         produtoComprado.setValorDoProduto(25);
         System.out.println("Produto: " + produtoComprado.getProduto());
