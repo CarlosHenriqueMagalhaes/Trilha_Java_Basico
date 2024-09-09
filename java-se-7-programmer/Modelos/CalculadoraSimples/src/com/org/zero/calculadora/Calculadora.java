@@ -26,5 +26,29 @@ public class Calculadora {
         return soma;
     }
 
+    /*
+    Nesse código, primeiro somamos o primeiro valor ao resultado inicial de
+    subtração (subtracao += valores[0]). Em seguida, começamos o loop a partir
+    do índice 1 e subtraímos os demais valores do resultado.
+    Com isso, se você chamar o método com os valores 10, 3 e 5, o resultado será:
+subtracao inicializa em 0
+subtracao recebe o valor 10 (0 + 10)
+subtracao recebe o valor 7 (10 - 3)
+subtracao recebe o valor 2 (7 - 5)
+     */
+    public int calculoSubtracao(int... valores) {
+        // esse if valida que se o número de argumentos for 0, ele retorna 0
+        if (valores.length == 0) {
+            return 0;
+        }
 
+        int subtracao = 0;
+        subtracao += valores[0];// soma o primeiro valor ao resultado inicial
+
+        for (int i = 1; i < valores.length; i++) {
+            subtracao -= valores[i];
+        }
+
+        return subtracao;
+    }
 }
