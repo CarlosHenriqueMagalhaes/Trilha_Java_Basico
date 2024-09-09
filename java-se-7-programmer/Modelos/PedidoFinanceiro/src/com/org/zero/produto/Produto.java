@@ -5,7 +5,7 @@ public class Produto {
     public String produto;
     public int valorDoProduto;
 
-    //getters e setters
+    //construtores: getters e setters
     public void setProduto(String produto){
         this.produto = produto;
     }

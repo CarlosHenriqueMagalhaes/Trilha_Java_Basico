@@ -18,7 +18,7 @@ public class Pedido {
     Pessoa cliente;
     Endereco enderecoPedido;
     Produto produto;
-    Date dataDoPedido = new Date();
+    Date dataDoPedido = new Date(); //aqui um objeto foi criado!
 
     Random random = new Random();
     int numeroPedido = random.nextInt(3000);
@@ -39,7 +39,7 @@ public class Pedido {
         //chamando médodo na classe Endereço:
         //veja sobre essa linha em Documentos:
         //Diferenca_entre_variaveis_referencias_e_objetos_e_tipos_primitivos.txt
-        Endereco endereco = new Endereco();
+        Endereco endereco = new Endereco(); //aqui um objeto foi criado!
         endereco.cadastroEndereco();
 
         System.out.println("Nº Pedido: " + numeroPedido);
