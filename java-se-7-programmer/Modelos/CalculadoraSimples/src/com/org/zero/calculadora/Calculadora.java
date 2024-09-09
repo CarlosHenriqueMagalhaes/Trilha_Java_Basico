@@ -31,10 +31,10 @@ public class Calculadora {
     subtração (subtracao += valores[0]). Em seguida, começamos o loop a partir
     do índice 1 e subtraímos os demais valores do resultado.
     Com isso, se você chamar o método com os valores 10, 3 e 5, o resultado será:
-subtracao inicializa em 0
-subtracao recebe o valor 10 (0 + 10)
-subtracao recebe o valor 7 (10 - 3)
-subtracao recebe o valor 2 (7 - 5)
+    -> subtracao inicializa em 0
+    -> subtracao recebe o valor 10 (0 + 10)
+    -> subtracao recebe o valor 7 (10 - 3)
+    -> subtracao recebe o valor 2 (7 - 5)
      */
     public int calculoSubtracao(int... valores) {
         // esse if valida que se o número de argumentos for 0, ele retorna 0
@@ -50,5 +50,15 @@ subtracao recebe o valor 2 (7 - 5)
         }
 
         return subtracao;
+    }
+
+    public int calculoMultiplicacao(int... numeros) {
+        int multiplicacao = 1;
+
+        for (int i = 0; i < numeros.length; i++){
+            multiplicacao *= numeros[i];
+        }
+        return multiplicacao;
+
     }
 }
