@@ -20,8 +20,8 @@ public class Calculadora {
 
     public int calculoSoma(int... valores) {
         int soma = 0;
-        for (int i = 0; i < valores.length; i++) {
-            soma += valores[i];
+        for (int valor : valores) {
+            soma += valor;
         }
         return soma;
     }
@@ -48,15 +48,14 @@ public class Calculadora {
         for (int i = 1; i < valores.length; i++) {
             subtracao -= valores[i];
         }
-
         return subtracao;
     }
 
     public int calculoMultiplicacao(int... numeros) {
         int multiplicacao = 1;
 
-        for (int i = 0; i < numeros.length; i++){
-            multiplicacao *= numeros[i];
+        for (int numero : numeros) {
+            multiplicacao *= numero;
         }
         return multiplicacao;
 
