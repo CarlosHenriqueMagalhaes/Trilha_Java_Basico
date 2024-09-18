@@ -5,8 +5,6 @@ de variáveis em memória sequencial. No Java, os arrays permitem esse tipo de a
     Um array é um objeto que armazena sequencialmente “uma porção” de variáveis de um determinado tipo.
     É importante reforçar que os arrays são objetos. Uma referência para um objeto array deve ser
 armazenada numa variável do tipo array.
-    A prova de certificação verifica se o candidato está apto a manipular tantoarrays de tipos
-primitivos quanto de tipos não primitivos.
 
 Os quatro pontos importantes sobre arrays são:
 
