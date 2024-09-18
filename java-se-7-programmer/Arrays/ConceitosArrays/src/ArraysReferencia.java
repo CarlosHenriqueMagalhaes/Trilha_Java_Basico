@@ -9,6 +9,9 @@ public class ArraysReferencia {
         personagens[3] = new Personagem();
         personagens[3].nome = "Obi-Wan Kenobi";
 
+        personagens[6] = new Personagem();
+        personagens[6].nome = "Princesa Leia";
+
         System.out.println(personagens[0].nome);
         System.out.println(personagens[3].nome);
 
@@ -20,13 +23,23 @@ public class ArraysReferencia {
         //Outra maneira de adicionar um novo personagem na array
         Personagem mestre = new Personagem();
         mestre.nome = "Yoda";
-        personagens[2] = mestre;
+        personagens[8] = mestre;
 
         //Esse codigo daria erro pois o nome das outras posições estão vazias ou nulls,
         //nas Arrays de Referência não é atribuido o default como nos tipos primitivos (int, long, etc.)
         //String é om Objeto Object!
         //for (int i = 0; i < personagens.length; i++) {
         //    System.out.println(personagens[i].nome);}
+        // Print the names of all characters in the array
+
+        System.out.println("-------Star Wars--------");
+        for (int i = 0; i < personagens.length; i++) {
+            if (personagens[i] != null) {
+                System.out.println(i + " " + personagens[i].nome);
+            } else {
+                System.out.println(i + " " +"Null");
+            }
+        }
     }
 }
 
