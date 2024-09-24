@@ -13,7 +13,7 @@ Inicializar
 Acessar
 Percorrer
 
->>>>Arrays de tipos primitivos:
+>>>>arrays.arrays de tipos primitivos:
 Declaração:
 
     Para declarar um array, é utilizado [] logo após ao tipo das variáveis que desejamos armazenar
