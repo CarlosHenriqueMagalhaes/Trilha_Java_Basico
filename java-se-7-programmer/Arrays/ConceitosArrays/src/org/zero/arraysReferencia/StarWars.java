@@ -1,6 +1,9 @@
 package org.zero.arraysReferencia;
 
-public class ArraysReferencia {
+import org.zero.modelos.Personagem;
+import org.zero.modelos.Vilao;
+
+public class StarWars {
     public static void main(String[] args) {
         Personagem starWarsPersonagens[] = new Personagem[10];
 
@@ -45,10 +48,3 @@ public class ArraysReferencia {
     }
 }
 
-class Personagem {
-    String nome;
-    String tendencia;
-}
-
-class Vilao extends Personagem {
-}
