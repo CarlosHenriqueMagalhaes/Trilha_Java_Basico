@@ -1,7 +1,7 @@
 package org.zero.arraysReferencia;
 
-import org.zero.modelos.Vilao;
-import org.zero.modelos.Personagem;
+import org.zero.arraysReferencia.modelos.Vilao;
+import org.zero.arraysReferencia.modelos.Personagem;
 
 import java.util.Scanner;
 
