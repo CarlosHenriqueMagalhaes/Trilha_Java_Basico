@@ -1,6 +1,6 @@
-package org.zero.arraysMultidimencionais;
+package org.zero.arraysMultidimensionais;
 
-public class ArrayMultiDimencional {
+public class ArrayMultiDimensional {
     public static void main(String[] args) {
 
         // Perceba que as dimensões podem ser definidas do lado
