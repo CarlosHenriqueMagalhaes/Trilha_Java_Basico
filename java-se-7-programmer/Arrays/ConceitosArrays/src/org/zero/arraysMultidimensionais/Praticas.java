@@ -24,9 +24,37 @@ class Praticas2 {
         int[][][] tabelaDeNotas;
 
         tabelaDeNotas = new int[][][]{{{8, 7, 15, 22, 10, 12, 9, 96}}
-                ,{{5}}};
+                , {{5}}};
         System.out.println(tabelaDeNotas.length); //2
 
         System.out.println(tabelaDeNotas[1].length); //1
+    }
+}
+
+class Praticas3 {
+    public static void main(String[] args) {
+
+        int[][][] tabelaDeNotas;
+
+        tabelaDeNotas = new int[][][]{{{8, 7, 15, 22, 10, 12, 9, 96}, {5, 3}}
+                , {{5}, {36, 8, 12}, {0}, {150, 9, 36, 45}}};
+        System.out.println(tabelaDeNotas.length); //2
+        System.out.println(tabelaDeNotas[1].length); //3
+
+        System.out.println("################");
+
+        // Loop para percorrer a primeira dimensão (tabelaDeNotas.length)
+        for (int i = 0; i < tabelaDeNotas.length; i++) {
+            // Loop para percorrer a segunda dimensão (tabelaDeNotas[i].length)
+            System.out.println("--------Tabela--------");
+            for (int j = 0; j < tabelaDeNotas[i].length; j++) {
+                // Loop para percorrer a terceira dimensão (tabelaDeNotas[i][j].length)
+                for (int k = 0; k < tabelaDeNotas[i][j].length; k++) {
+                    System.out.print(tabelaDeNotas[i][j][k] + " ");
+                }
+                System.out.println(); // quebra de linha após imprimir uma linha da tabela
+            }
+            System.out.println(); // quebra de linha após imprimir uma tabela
+        }
     }
 }
