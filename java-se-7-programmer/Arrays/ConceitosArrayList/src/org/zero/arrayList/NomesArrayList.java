@@ -1,7 +1,6 @@
 package org.zero.arrayList;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class NomesArrayList {
     public static void main(String[] args) {
@@ -49,7 +48,7 @@ public class NomesArrayList {
         // nesse caso Henrique ira vira Josias
 
         tudo.indexOf("Felicio");// mostra a posição do primeiro Felicio que encontrar //4
-        System.out.println(tudo.lastIndexOf("Nátalia"));//1 mostra a posição do ultimo Nátalia que encontrar 
+        System.out.println(tudo.lastIndexOf("Nátalia"));//1 mostra a posição do ultimo Nátalia que encontrar
 
         System.out.println(tudo);
     }
