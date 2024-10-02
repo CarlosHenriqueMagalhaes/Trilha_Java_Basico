@@ -1,6 +1,7 @@
 package org.zero.arrayList;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class NomesArrayList {
     public static void main(String[] args) {
@@ -65,5 +66,12 @@ class NomesArrayListToArrays {
         String nomeArrays[] = nome.toArray(new String[nome.size()]);//ou:
         String nomeArrays2[] = nome.toArray(new String[0]);//ao deixar 0,
         // o array ja é criado do tamanho certo do arrayList
+
+        Iterator<String> iterator = nome.iterator();
+
+        while (iterator.hasNext()){
+            String atual = iterator.next();
+            System.out.println(atual);
+        }
     }
 }
