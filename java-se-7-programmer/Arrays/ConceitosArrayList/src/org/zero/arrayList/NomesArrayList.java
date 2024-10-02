@@ -94,6 +94,13 @@ class IteratorLists {
             System.out.println(atual);
             //iterator.remove(); // remove os elementos da lista
         }
-        
+
+        System.out.println("-------------");
+
+        // for each para percorrer a lista:
+        for (String nomes : nome){
+            System.out.println(nomes);
+        }
+
     }
 }
