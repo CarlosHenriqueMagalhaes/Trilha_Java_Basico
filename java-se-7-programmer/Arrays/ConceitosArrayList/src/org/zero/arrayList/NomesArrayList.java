@@ -22,12 +22,12 @@ public class NomesArrayList {
         nomes.remove("Carlos");// remove o primero Carlos da lista
         System.out.println(nomes);
 
-        ArrayList<String>sobrenome = new ArrayList<>();
+        ArrayList<String> sobrenome = new ArrayList<>();
         sobrenome.add("Henrique");
         sobrenome.add("Felicio");
 
         //adiciona outras ArrayList em uma nova
-        ArrayList<String>tudo = new ArrayList<>();
+        ArrayList<String> tudo = new ArrayList<>();
         tudo.addAll(nomes);
         tudo.addAll(sobrenome);
         System.out.println(tudo);
@@ -38,20 +38,28 @@ public class NomesArrayList {
 
         //consigo adicionar a posição que quero inserir um item no .add
         //basta colocar a posição antes do elemento:
-        tudo.add(2,"Nátalia");
+        tudo.add(2, "Nátalia");
         System.out.println(tudo);
 
         tudo.remove(0);// remove o item da primeira posição
         // o que esta na posição 1 vai para a posição 0
         // Mario foi removido, Erica vai ser a nova posição 0
 
-        tudo.set(3,"Josias");// muda o valor de um item dado sua posição
+        tudo.set(3, "Josias");// muda o valor de um item dado sua posição
         // nesse caso Henrique ira vira Josias
 
         tudo.indexOf("Felicio");// mostra a posição do primeiro Felicio que encontrar //4
         System.out.println(tudo.lastIndexOf("Nátalia"));//1 mostra a posição do ultimo Nátalia que encontrar
 
         System.out.println(tudo);
+
+        //exemplo Iterator:
+        Iterator<String> interatorTudo = tudo.iterator();
+
+        while (interatorTudo.hasNext()) {
+            String percorreListaTudo = interatorTudo.next();
+            System.out.println("-> " + percorreListaTudo);
+        }
     }
 }
 
@@ -67,11 +75,25 @@ class NomesArrayListToArrays {
         String nomeArrays2[] = nome.toArray(new String[0]);//ao deixar 0,
         // o array ja é criado do tamanho certo do arrayList
 
+    }
+}
+
+class IteratorLists {
+    public static void main(String[] args) {
+        ArrayList<String> nome = new ArrayList<>();
+        nome.add("Felipe");
+        nome.add("Anderson");
+        nome.add("Joelma");
+
+        //método para percorrer uma arraylist
         Iterator<String> iterator = nome.iterator();
 
-        while (iterator.hasNext()){
+        // enquanto a lista tudo tiver valores
+        while (iterator.hasNext()) {
             String atual = iterator.next();
             System.out.println(atual);
+            //iterator.remove(); // remove os elementos da lista
         }
+        
     }
 }
