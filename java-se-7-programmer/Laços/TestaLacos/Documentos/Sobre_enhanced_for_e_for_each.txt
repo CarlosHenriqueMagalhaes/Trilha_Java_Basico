@@ -1,0 +1,69 @@
+Enhanced for
+Quando vamos percorrer uma coleção de objetos ou um array, podemos usar uma versão simplificada
+do for para percorrer essa coleção de maneira simplificada. Essa forma simplificada é chamada de
+::enhanced for::, ou ::foreach:: :
+
+----------------------------------------------------------------------------------------------------
+int[] numeros = {1,2,3,4,5,6};
+for (int num : numeros) { //enhanced for
+    System.out.println(num);
+}
+----------------------------------------------------------------------------------------------------
+A sintaxe é mais simples, temos agora 2 partes dentro da declaração do for:
+
+----------------------------------------------------------------------------------------------------
+for(VARIAVEL : COLEÇÃO){
+    CODIGO
+}
+----------------------------------------------------------------------------------------------------
+Nesse caso, declaramos uma variável que irá receber cada um dos membros da coleção ou array que
+estamos percorrendo. O próprio for irá a cada iteração do laço atribuir o próximo elemento da
+lista à variável. Seria o equivalente a fazer o seguinte:
+
+----------------------------------------------------------------------------------------------------
+int[] numeros = {1,2,3,4,5,6};
+
+for( int i=0; i < numeros.length; i++){
+    int num = numeros[i]; //declaração da variável e atribuição
+    System.out.println(num);
+}
+----------------------------------------------------------------------------------------------------
+Se fosse uma ::collection::, o código fica mais simples ainda se comparado com o for original:
+----------------------------------------------------------------------------------------------------
+ArrayList<String> nomes = //lista com vários nomes
+
+//percorrendo a lista com o for simples
+for(Iterator<String> iterator = nomes.iterator();
+    iterator.hasNext();){
+    String nome = iterator.next();
+    System.out.println(nome);
+}
+
+//percorrendo com o enhanced for
+for (String nome : nomes) {
+    System.out.println(nome);
+}
+----------------------------------------------------------------------------------------------------
+Existem, porém, algumas limitações no ::enhanced for::. Não podemos, por exemplo, modificar o
+conteúdo da coleção que estamos percorrendo usando a variável que declaramos:
+
+----------------------------------------------------------------------------------------------------
+ArrayList<String> nomes = //lista com vários nomes
+
+//tentando remover nomes da lista
+for (String nome : nomes) {
+    nome = null;
+}
+
+//o que imprime abaixo?
+for (String nome : nomes) {
+    System.out.println(nome);
+}
+----------------------------------------------------------------------------------------------------
+Ao executar esse código, você perceberá que a coleção não foi modificada, nenhum elemento mudou
+de valor para null.
+
+Outra limitação é que não há uma maneira natural de saber em qual iteração estamos, já que não
+existe nenhum contador. Para saber em qual linha estamos, precisaríamos de um contador externo.
+Também não é possível percorrer duas coleções ao mesmo tempo, já que não há um contador
+centralizado. Para todos esses casos, é recomendado usar o for simples.
