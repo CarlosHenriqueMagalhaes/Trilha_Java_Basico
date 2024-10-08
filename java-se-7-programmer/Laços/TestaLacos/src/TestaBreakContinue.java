@@ -81,3 +81,31 @@ class TestaLacos {
         }
     }
 }
+
+
+class A {
+    public static void main(String[] args) {
+        fora: for(int a=0;a<30;a++)
+            for(int b=0;b<1;b++)
+                if(a+b==25) continue fora;
+                else if(a+b==20) break;
+                else System.out.println(a);//imprime 0 até 19, 21 até 24, 26 até 29.
+    }
+}
+
+class B {
+    public static void main(String[] args) {
+        int a = args.length;
+        int i = 0;
+        switch(a) {
+            case 0:
+            case 1:
+                for(i=0;i<15;i++, System.out.println(i))
+                    if(i==5) continue;
+                if(i==15) break;
+            case 2:
+                System.out.println("2");
+        }
+        System.out.println("fim");
+    }
+}
