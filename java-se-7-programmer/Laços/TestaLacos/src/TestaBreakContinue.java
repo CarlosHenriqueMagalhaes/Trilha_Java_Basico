@@ -39,9 +39,11 @@ public class TestaBreakContinue {
          */
 
         System.out.println("---Break com label:---");
-        externo: for (int l = 1; l < 10; l++) {
-            interno: for (int m = 1; m < 10; m++) {
-                if (l * m == 25)    {
+        externo:
+        for (int l = 1; l < 10; l++) {
+            interno:
+            for (int m = 1; m < 10; m++) {
+                if (l * m == 25) {
                     break externo; // quebrando o for externo
                 }
                 if (l * m == 16) {
@@ -52,20 +54,30 @@ public class TestaBreakContinue {
     }
 }
 
+class TestaBreak {
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+            if (i == 4)
+                break;
+        }
+    }
+}
 
-class TestaLacos {
+class TestaBreakContinueSwitchCase {
     public static void main(String[] args) {
 
-        for(int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
             System.out.println("Estou antes do switch");
             label:
-            segundoLabel: switch(i) {
+            segundoLabel:
+            switch (i) {
                 case 0:
                 case 1:
                     System.out.println("Caso " + i);
-                    for(int j = 0; j < 3; j++) {
+                    for (int j = 0; j < 3; j++) {
                         System.out.println(j);
-                        if(j==1) break label;
+                        if (j == 1) break label;
                     }
                 case 2:
                     System.out.println("Estou em i = " + i);
@@ -82,27 +94,27 @@ class TestaLacos {
     }
 }
 
-
-class A {
+class TestaLacosLabelFor {
     public static void main(String[] args) {
-        fora: for(int a=0;a<30;a++)
-            for(int b=0;b<1;b++)
-                if(a+b==25) continue fora;
-                else if(a+b==20) break;
+        fora:
+        for (int a = 0; a < 30; a++)
+            for (int b = 0; b < 1; b++)
+                if (a + b == 25) continue fora;
+                else if (a + b == 20) break;
                 else System.out.println(a);//imprime 0 até 19, 21 até 24, 26 até 29.
     }
 }
 
-class B {
+class TestaLacosSwitchCase {
     public static void main(String[] args) {
         int a = args.length;
         int i = 0;
-        switch(a) {
+        switch (a) {
             case 0:
             case 1:
-                for(i=0;i<15;i++, System.out.println(i))
-                    if(i==5) continue;
-                if(i==15) break;
+                for (i = 0; i < 15; i++, System.out.println(i))
+                    if (i == 5) continue;
+                if (i == 15) break;
             case 2:
                 System.out.println("2");
         }
