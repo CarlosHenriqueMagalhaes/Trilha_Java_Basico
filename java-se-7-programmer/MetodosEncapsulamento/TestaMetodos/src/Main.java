@@ -11,6 +11,10 @@ public class Main {
         System.out.println(result.somador(1,1));
         System.out.println(result.somador(-15,3,2,-99));//deve retornar 0 pela logica criada no método
 
+        System.out.println(result.subtracao(14,3,1,0));
+        System.out.println(result.subtracao(600,200,50));
+        System.out.println(result.subtracao(10,20));
+
         result.mensagemFinal(); // como não retorna nada não precisa do sout
     }
 }

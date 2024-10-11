@@ -24,6 +24,16 @@ public class Calculadora {
         return resultadoSoma;
     }
 
+    public int subtracao(int... valores) {
+        int resultadoSubtracao = valores[0];
+
+        for (int i = 1; i < valores.length; i++) { //i deve começar em 1 para não subtrair do primeiro valor
+            resultadoSubtracao -= valores[i];
+        }
+        return resultadoSubtracao;
+
+    }
+
     //metodos void não retornam nada! Apenas executam o que esta em seu bloco
     public void mensagemFinal() {
         System.out.println("FIM!");
