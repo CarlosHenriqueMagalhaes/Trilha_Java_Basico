@@ -2,12 +2,6 @@ package org.zero.exercicios;
 
 public class TestaStatic {
     public static void main(String[] args) {
-        System.out.println("Testes usando static");
-    }
-}
-
-class TesteA {
-    public static void main(String[] args) {
         x();
     }
 
@@ -19,10 +13,11 @@ class TesteA {
     static void y() {
         System.out.println("y");
     }
-}
-////////////////////////////////////
 
-class BlocoB {
+}
+/////////////////////////////////////////////
+
+class BlocoA {
     void y() {
         this.z();
     }
@@ -32,18 +27,18 @@ class BlocoB {
     }
 }
 
-class BlocoA {
+class TestaStatic2 {
     public static void main(String[] args) {
-        new BlocoA().x();
+        new TestaStatic2().x();
     }
 
     static void x() {
-        new BlocoB().y();
+        new BlocoA().y();
     }
 }
 /////////////////////////////////////////////
 
-class B {
+class BlocoB {
     static void x() {
         System.out.println("x");
     }
@@ -53,9 +48,9 @@ class B {
     }
 }
 
-class A extends B {
+class TestaStatic3 extends BlocoB {
     public static void main(String[] args) {
         x();
-        A.y();
+        TestaStatic3.y();
     }
 }
