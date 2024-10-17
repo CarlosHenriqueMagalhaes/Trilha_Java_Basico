@@ -15,5 +15,9 @@ public class TestaStatic {
 
         // usando static do metodo, a variavel só tem seu valor alterado no método
         System.out.println("Total de carros: " + Carros.getTotalDeCarros());
+
+        System.out.println("Padrão número de Carros: " + Carros.PADRAO_NUMERO_DE_CARROS);
+
+        System.out.println("Número máximo de Carros: " + Carros.getMaximoDeCarros());
     }
 }
