@@ -5,13 +5,19 @@ public class CarroShop {
     int ano;
 
     //construtor
-    public CarroShop(String modelo, int ano){
+    public CarroShop(String modelo, int ano) {
         this.modelo = modelo;
         this.ano = ano;
     }
 
+    //sobrecarga de Construtor
+    public CarroShop(String modelo) {
+        this.modelo = modelo;
+        System.out.println("Apenas o modelo foi passado: " + modelo);
+    }
+
     //método
-    public void exibirInfoDoCarro(){
+    public void exibirInfoDoCarro() {
         System.out.println("Modelo: " + modelo + ", Ano: " + ano);
 
     }
@@ -23,5 +29,10 @@ public class CarroShop {
 
         CarroShop carro2 = new CarroShop("Opala", 1986);
         carro2.exibirInfoDoCarro();
+
+        //invocação da sobrecarca de método
+        //Como passei apenas a String ele caiu no contrutor da linha 14
+        new CarroShop("Fusca");
+        new CarroShop("Mercedes");
     }
 }
