@@ -1,0 +1,68 @@
+Os modificadores de acesso, ou modificadores de visibilidade, servem para definir
+quais partes de cada classe (ou se uma classe inteira) estão visíveis para serem
+utilizadas por outras classes do sistema. Só é permitido usar um único modificador
+de acesso por vez.
+
+O Java possui os seguintes modificadores de acesso:
+
+>> public
+>> protected
+>> Nenhum modificador, chamado de default
+>> private
+
+Classes e interfaces só aceitam os modificadores public ou default.
+
+Membros (construtores, métodos e variáveis) podem receber qualquer um dos quatro
+modificadores.
+
+Variáveis locais (declaradas dentro do corpo de um método ou construtor) e parâmetros
+não podem receber nenhum modificador de acesso, mas podem receber outros modificadores.
+--------------------------------------------------------------------------------------------
+Top Level Classes e Inner Classes:
+Classes internas (nested classes ou inner classes) são classes que são declaradas dentro
+de outras classes. Esse tipo de classe pode receber qualquer modificador de acesso, já que
+são consideradas membros da classe onde foram declaradas (top level class).
+--------------------------------------------------------------------------------------------
+Public
+O modificador public é o menos restritivo de todos. Classes, interfaces e membros marcados
+com esse modificador podem ser acessados de qualquer componente, em qualquer pacote.
+--------------------------------------------------------------------------------------------
+Protected
+Membros definidos com o modificador protected podem ser acessados por classes e interfaces
+no mesmo pacote, e por qualquer classe que estenda aquela onde o membro foi definido,
+independente do pacote.
+--------------------------------------------------------------------------------------------
+Default
+Se não definirmos explicitamente qual o modificador de acesso, podemos dizer que aquele
+membro está usando o modificador default, também chamado de package private.
+--------------------------------------------------------------------------------------------
+Private
+private é o mais restritivo de todos os modificadores de acesso. Membros definidos como
+private só podem ser acessados de dentro da classe e de nenhum outro lugar, independente
+de pacote ou herança
+
+Private e classes aninhadas ou anônimas
+Classes aninhadas ou anônimas podem acessar membros privados da classe onde estão contidas.
+Métodos privados e padrão não podem ser sobrescritos. Se uma classe o "sobrescreve", ele
+simplesmente é um método novo, portanto não podemos dizer que é sobrescrita.
+--------------------------------------------------------------------------------------------
+Resumo das regras de visibilidade
+Todos os membros da classe com o modificador de private só podem ser acessados de dentro dela
+mesma.
+
+Todos os membros da classe sem nenhum modificador de visibilidade, ou seja, com visibilidade
+package-private, podem ser acessados de dentro da própria classe ou de dentro de qualquer outra
+classe, interface ou enum do mesmo pacote.
+
+Todos os membros da classe com o modificador protected podem ser acessados:
+
+de dentro da classe, ou de dentro de qualquer outra classe, interface ou enum do mesmo pacote;
+de dentro de alguma classe que deriva direta ou indiretamente da classe, independente do pacote.
+O membro protected só pode ser chamado através da referência this, ou por uma referência que seja
+dessa classe filha.
+Todos os membros da classe com o modificador public podem ser acessados de qualquer lugar da aplicação.
+
+E não podemos ter classes/interfaces/enums top-level como private ou protected.
+
+Uma classe é dita top-level se ela não foi definida dentro de outra classe, interface ou enum.
+Analogamente, são definidas as interfaces top-level e os enums top-level.
