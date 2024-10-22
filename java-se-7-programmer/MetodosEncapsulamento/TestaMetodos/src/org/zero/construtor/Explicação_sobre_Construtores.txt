@@ -1,0 +1,55 @@
+Construtores em Java são métodos especiais que são chamados quando um objeto de uma
+classe é criado. Eles têm o mesmo nome da classe e não têm um tipo de retorno, nem mesmo
+void. Os construtores são usados para inicializar os atributos do objeto e podem ter
+parâmetros para permitir a configuração inicial do objeto.
+
+Características dos Construtores:
+
+Nome: O nome do construtor deve ser o mesmo que o nome da classe.
+
+Sem tipo de retorno: Não têm tipo de retorno, nem mesmo void.
+
+Sobrecarga: É possível ter múltiplos construtores na mesma classe (sobrecarga),
+desde que tenham diferentes listas de parâmetros.
+
+Construtor padrão: Se nenhum construtor for definido, o Java fornece um construtor
+padrão sem parâmetros.
+
+
+Exemplo de Construtor em Java:
+Aqui está um exemplo simples de uma classe Carro com um construtor:
+
+--------------------------------------------
+public class Carro {
+    // Atributos da classe
+    private String modelo;
+    private int ano;
+
+    // Construtor da classe
+    public Carro(String modelo, int ano) {
+        this.modelo = modelo; // Inicializa o atributo modelo
+        this.ano = ano;       // Inicializa o atributo ano
+    }
+
+    // Método para exibir informações do carro
+    public void exibirInfo() {
+        System.out.println("Modelo: " + modelo + ", Ano: " + ano);
+    }
+
+    public static void main(String[] args) {
+        // Criando um objeto Carro usando o construtor
+        Carro meuCarro = new Carro("Fusca", 1975);
+        meuCarro.exibirInfo(); // Saída: Modelo: Fusca, Ano: 1975
+    }
+}
+--------------------------------------------
+Explicação do Exemplo:
+Atributos: A classe Carro tem dois atributos: modelo e ano.
+
+Construtor: O construtor Carro(String modelo, int ano) inicializa os atributos com os
+valores fornecidos quando um novo objeto Carro é criado.
+
+Método exibirInfo: Este método exibe as informações do carro.
+
+Uso do Construtor: No método main, um objeto Carro é criado usando o construtor, e as
+informações do carro são exibidas.
