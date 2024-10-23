@@ -1,0 +1,22 @@
+A assinatura de um método é o que realmente deve importar para o usuário de alguma classe.
+Segundo os bons princípios do encapsulamento, a implementação dos métodos deve estar
+encapsulada e não deve fazer diferença para o usuário.
+
+O que é importante em uma classe é o que ela faz e não como ela faz. O que ela faz é definido
+pelos comportamentos expostos, ou seja, pelos métodos e suas assinaturas.
+
+O conjunto de assinaturas de métodos visíveis de uma classe é chamado de interface de uso.
+É através dessas operações que os usuários vão se comunicar com os objetos dessa classe.
+
+Mantendo os detalhes de implementação de nossas classes "escondidos", evitamos que mudanças na
+forma de implementar uma lógica quebre vários pontos de nossa aplicação.
+
+Uma das formas mais simples de começar a encapsular o comportamento de uma classe é escondendo
+seus atributos. Podemos fazer isso facilmente usando a palavra-chave private
+
+Caso precisemos acessar um desses atributos a partir de outra classes, teremos que criar um método
+para liberar o acesso de leitura desse atributo. Seguindo a especificação dos javabeans,
+esse método seria um getter. Da mesma forma , se precisarmos liberar a escrita de algum atributo,
+criamos um método setter
+
+Vide exemplo na classe Pessoa
