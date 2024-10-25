@@ -3,7 +3,7 @@ package org.zero.praticas;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class Exercicios {
+public class ExerciciosHeranca {
 }
 
 class Veiculo {
