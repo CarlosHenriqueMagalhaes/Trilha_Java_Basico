@@ -18,16 +18,17 @@ import javax.servlet.http.HttpServletResponse;
 
 //http://localhost:8080/gerenciador/newInc
 @WebServlet("/newInc")
-public class newInc extends HttpServlet {
+public class newIncServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Cadastrando nova empresa!");
+		System.out.println("Cadastrando nova empresa!");// imprime no console do servidor
 		
 		String nomeEmpresa = request.getParameter("nome");//ira pegar o parametro digitado no navegador (?nome:<>)
-		PrintWriter saida = response.getWriter();
+		PrintWriter saida = response.getWriter();//para escrever caracteres
 		
-		saida.println("<html><body>Empresa "  + nomeEmpresa + " foi criada com sucesso!</body></html>");
+		saida.println("<html><body>Empresa "  + nomeEmpresa + " foi criada com sucesso!</body></html>");//imprime no navegador	
+		System.out.printf(nomeEmpresa);// exibe no console do servlet
 	}
 
 }
