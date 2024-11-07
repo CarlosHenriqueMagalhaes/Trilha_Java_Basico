@@ -21,14 +21,21 @@ import javax.servlet.http.HttpServletResponse;
 public class newIncServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/*
+	 * Ao colocar a sobreescrita doPost esse método só irá aceitar requisições Post.
+	Agora já não aceita o uso de http://localhost:8080/gerenciador/newInc?nome=<nomeDaEmpresa> 
+	no navegador, ele retorna um erro 405, pois esse método não é mais get!
+	Acesse esse método através de http://localhost:8080/gerenciador/form-new-inc.html no 
+	navegador (ele usa o html criado nesse projeto)
+	 */	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Cadastrando nova empresa!");// imprime no console do servidor
 		
-		String nomeEmpresa = request.getParameter("nome");//ira pegar o parametro digitado no navegador (?nome:<>)
+		String nomeEmpresa = request.getParameter("nome");
 		PrintWriter saida = response.getWriter();//para escrever caracteres
 		
 		saida.println("<html><body>Empresa "  + nomeEmpresa + " foi criada com sucesso!</body></html>");//imprime no navegador	
-		System.out.printf(nomeEmpresa);// exibe no console do servlet
+		System.out.printf(nomeEmpresa + " foi cadastrada!");// exibe no console do servlet
 	}
 
 }
