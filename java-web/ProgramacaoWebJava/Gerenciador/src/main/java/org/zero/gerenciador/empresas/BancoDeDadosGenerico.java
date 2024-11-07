@@ -7,6 +7,13 @@ public class BancoDeDadosGenerico {
 
 	private static List<Empresa> listaDeEmpresa = new ArrayList<Empresa>();
 
+	//O Server já inicializa com uma empresa na lista:
+	static {
+		Empresa empresaPadrao = new Empresa();
+		empresaPadrao.setNome("Alquimech ltda.");
+		listaDeEmpresa.add(empresaPadrao);
+	}
+
 	public void adiciona(Empresa empresa) {
 		listaDeEmpresa.add(empresa);
 	}
