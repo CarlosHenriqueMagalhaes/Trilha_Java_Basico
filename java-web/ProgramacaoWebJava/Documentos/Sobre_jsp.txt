@@ -1,0 +1,32 @@
+Usamos uma servlet para informar o usuário sobre os dados cadastrados, porém podemos fazer isso através de um JSP. 
+Crie o arquivo novaEmpresaCriada.jsp dentro da pasta WebContent. Inicialmente, através de um scriptlet através da 
+sintaxe <% %> crie uma instância de Empresa e, através dessa instância, exiba o nome da empresa usando 
+<% out.println(empresa.getNome()) %>
+
+Você aprendeu que a expressão <% out.println(empresa.getNome()) %> pode ser simplificada através de <%= nomeDaVariavel %>. 
+Simplifique o código anterior.
+
+Em NovaEmpresaServlet, assim que adicionar uma empresa ao banco, faça o despacho da requisição para novaEmpresaCriada.jsp. 
+Em suma, queremos fazer um despacho de uma requisição recebida pela servlet para um JSP. Porém, como JSP precisa obter o 
+nome da empresa, adicione essa informação através do método setAttribute de HttpServletRequest para que essa informação 
+esteja disponível durante a renderização do JSP.
+
+Altere novaEmpresaCriada.jsp para obter o parâmetro adicionada na requisição através de setAttribute em NovaEmpresaServlet. 
+Não esqueça que você precisará realizar um casting para String ao chamar o método request.getAttribute() do objeto implícito 
+request acessível em todo JSP.
+
+Separe melhor as responsabilidades. Crie o jsp listaEmpresas.jsp que terá como responsabilidade exibir a lista de empresas. 
+No JSP voce deve importar as classes List e Empresa:
+-------------------------------------------------------------------------------------------------
+<%@ page import="java.util.List, br.com.caelum.gerenciador.servlet.Empresa"%>
+-------------------------------------------------------------------------------------------------
+Pegue o atributo da requisição:
+-------------------------------------------------------------------------------------------------
+List<Empresa> lista = (List<Empresa>)request.getAttribute("empresas");
+-------------------------------------------------------------------------------------------------
+e gere uma lista HTML (elementos <ul> e <li>) com o nome da empresa dinamicamente.
+
+Lembre-se ListaEmpresasServlet deverá adicionar a lista de empresas como atributo da requisição antes de realizar o despacho 
+para o JSP listaEmpresas.jsp.
+
+** No projeto o nome dos pacotes, objetos e classes estão diferentes desse tutorial
