@@ -26,7 +26,7 @@ public class ListaDeEmpresasServlet extends HttpServlet {
 		BancoDeDadosGenerico listaBanco = new BancoDeDadosGenerico();
 		List<Empresa> listaDeEmpresas = listaBanco.getEmpresas();
 
-		request.setAttribute("listas", listaDeEmpresas);
+		request.setAttribute("listaDeEmpresasCadastradas", listaDeEmpresas);
 
 		RequestDispatcher despachar = request.getRequestDispatcher("/ListaDeEmpresas.jsp");
 		despachar.forward(request, response);
