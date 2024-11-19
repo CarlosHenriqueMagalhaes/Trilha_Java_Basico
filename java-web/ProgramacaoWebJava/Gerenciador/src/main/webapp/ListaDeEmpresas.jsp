@@ -1,5 +1,6 @@
 <%@ page import="java.util.List , org.zero.gerenciador.empresas.Empresa"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE hmtl>
 <html>
@@ -12,7 +13,7 @@ Lista de Empresas:
 
 <ul>
 	<c:forEach items="${ listaDeEmpresasCadastradas }" var="empresa">
-		<li>${ empresa.nome }</li>
+		<li>${ empresa.nome } - <fmt:formatDate value="${ dataAbertura }" pattern="dd/MM/yyyy"/> </li>
 	</c:forEach>
 </ul>
 
