@@ -22,11 +22,11 @@ public class Empresa {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public Date getDataAbertura() {
 		return dataAbertura;
 	}
-	
+
 	public void setDataAbertura(Date dataAbertura) {
 		this.dataAbertura = dataAbertura;
 	}

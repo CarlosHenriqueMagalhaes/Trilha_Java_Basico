@@ -7,13 +7,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Java Standard Taglib</title>
+
 </head>
 Lista de Empresas:
 <br />
-
 <ul>
 	<c:forEach items="${ listaDeEmpresasCadastradas }" var="empresa">
-		<li>${ empresa.nome } - <fmt:formatDate value="${ dataAbertura }" pattern="dd/MM/yyyy"/> </li>
+		<li>${ empresa.nome }- <fmt:formatDate
+				value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy" />
+		</li>
 	</c:forEach>
 </ul>
 
