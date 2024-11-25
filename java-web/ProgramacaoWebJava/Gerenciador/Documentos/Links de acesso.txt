@@ -1,0 +1,5 @@
+Use no navegador após executar o server.
+
+http://localhost:8080/gerenciador/formNovaEmpresa.jsp
+http://localhost:8080/gerenciador/novaEmpresa
+http://localhost:8080/gerenciador/listaDeEmpresas

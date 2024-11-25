@@ -15,11 +15,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/listaDeEmpresas")
+@WebServlet("/listaEmpresas")
 public class ListaDeEmpresasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void service (HttpServletRequest request, HttpServletResponse response) // mudado a sobrescrita pois agora sera GET e POST
 			throws ServletException, IOException {
 
 		BancoDeDadosGenerico listaBanco = new BancoDeDadosGenerico();
@@ -27,7 +27,7 @@ public class ListaDeEmpresasServlet extends HttpServlet {
 
 		request.setAttribute("listaDeEmpresasCadastradas", listaDeEmpresas);
 
-		RequestDispatcher despachar = request.getRequestDispatcher("/ListaDeEmpresas.jsp");
+		RequestDispatcher despachar = request.getRequestDispatcher("/ListaDeEmpresas.jsp"); 
 		despachar.forward(request, response);
 	}
 
