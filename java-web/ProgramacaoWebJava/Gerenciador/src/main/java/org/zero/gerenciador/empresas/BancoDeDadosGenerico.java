@@ -21,6 +21,7 @@ public class BancoDeDadosGenerico {
 
 			listaDeEmpresa.add(empresa);
 		}
+
 	}
 
 	public List<Empresa> getEmpresas() {
