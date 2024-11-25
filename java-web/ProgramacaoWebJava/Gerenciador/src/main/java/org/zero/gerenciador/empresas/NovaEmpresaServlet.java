@@ -39,9 +39,8 @@ public class NovaEmpresaServlet extends HttpServlet {
 		BancoDeDadosGenerico banco = new BancoDeDadosGenerico();
 		banco.adiciona(empresa);
 
-		RequestDispatcher despachar = request.getRequestDispatcher("/listaEmpresas");
-		request.setAttribute("empresa", empresa.getNome());
-		despachar.forward(request, response);
+		response.sendRedirect("listaEmpresas");
+
 	}
 
 }
