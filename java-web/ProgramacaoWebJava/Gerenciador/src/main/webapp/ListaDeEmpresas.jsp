@@ -14,7 +14,12 @@
 	Empresa ${ empresa } foi cadastrada com sucesso!
 	</c:if>
 	
+	<c:if test="${ empty empresa}">
+	Nenhuma empresa foi cadastrada...
+	</c:if>
+
 	Lista de Empresas:
+
 	<br />
 	<ul>
 		<c:forEach items="${ listaDeEmpresasCadastradas }" var="empresa">

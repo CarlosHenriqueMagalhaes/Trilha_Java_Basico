@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//http://localhost:8080/gerenciador/novaEmpresa
 @WebServlet("/novaEmpresa")
 public class NovaEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,8 +39,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 		BancoDeDadosGenerico banco = new BancoDeDadosGenerico();
 		banco.adiciona(empresa);
 
-		// Chamar o jsp
-		RequestDispatcher despachar = request.getRequestDispatcher("/listaEmpresas");//vai despachar agora para o servlet da classe ListaDeEmpresasServlet
+		RequestDispatcher despachar = request.getRequestDispatcher("/listaEmpresas");
 		request.setAttribute("empresa", empresa.getNome());
 		despachar.forward(request, response);
 	}

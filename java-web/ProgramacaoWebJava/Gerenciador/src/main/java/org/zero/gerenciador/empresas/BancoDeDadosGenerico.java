@@ -7,7 +7,7 @@ public class BancoDeDadosGenerico {
 
 	private static List<Empresa> listaDeEmpresa = new ArrayList<Empresa>();
 
-	//O Server já inicializa com uma empresa na lista:
+	// O Server já inicializa com uma empresa na lista:
 	static {
 		Empresa empresaPadrao = new Empresa();
 		empresaPadrao.setNome("Alquimech ltda.");
@@ -15,7 +15,12 @@ public class BancoDeDadosGenerico {
 	}
 
 	public void adiciona(Empresa empresa) {
-		listaDeEmpresa.add(empresa);
+		if (empresa.getNome().isBlank()) {
+			System.out.println("Nenhuma empresa cadastrada!");
+		} else {
+
+			listaDeEmpresa.add(empresa);
+		}
 	}
 
 	public List<Empresa> getEmpresas() {

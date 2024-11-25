@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ListaDeEmpresasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service (HttpServletRequest request, HttpServletResponse response) // mudado a sobrescrita pois agora sera GET e POST
+	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		BancoDeDadosGenerico listaBanco = new BancoDeDadosGenerico();
@@ -27,7 +27,7 @@ public class ListaDeEmpresasServlet extends HttpServlet {
 
 		request.setAttribute("listaDeEmpresasCadastradas", listaDeEmpresas);
 
-		RequestDispatcher despachar = request.getRequestDispatcher("/ListaDeEmpresas.jsp"); 
+		RequestDispatcher despachar = request.getRequestDispatcher("/ListaDeEmpresas.jsp");
 		despachar.forward(request, response);
 	}
 
