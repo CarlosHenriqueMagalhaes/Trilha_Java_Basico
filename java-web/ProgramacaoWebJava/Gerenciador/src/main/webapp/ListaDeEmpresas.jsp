@@ -19,7 +19,7 @@
 	<br />
 	<ul>
 		<c:forEach items="${ listaDeEmpresasCadastradas }" var="empresa">
-			<li>${ empresa.nome }- <fmt:formatDate
+			<li>${ empresa.nome }-<fmt:formatDate
 					value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy" /> <a
 				href="/gerenciador/removeEmpresa?id=${ empresa.id }">remove</a> <a
 				href="/gerenciador/mostraEmpresa?id=${ empresa.id }">editar</a>

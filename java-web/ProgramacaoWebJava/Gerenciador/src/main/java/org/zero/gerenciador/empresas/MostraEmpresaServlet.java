@@ -27,7 +27,6 @@ public class MostraEmpresaServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("/formAlteraEmpresa.jsp");
 		rd.forward(request, response);
 
-		// response.sendRedirect("listaEmpresas");
 	}
 
 }
