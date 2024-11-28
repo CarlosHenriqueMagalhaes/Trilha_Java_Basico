@@ -46,4 +46,15 @@ public class BancoDeDadosGenerico {
 		}
 
 	}
+
+	public Empresa buscaEmpresaPeloId(int id) {
+		for (Empresa empresa : listaDeEmpresa) {
+			if(empresa.getId()==id) {
+				return empresa;
+			}
+			
+		}
+		return null;
+		
+	}
 }
