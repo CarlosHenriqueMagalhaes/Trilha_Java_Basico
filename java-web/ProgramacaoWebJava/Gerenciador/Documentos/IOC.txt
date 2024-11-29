@@ -1,0 +1,29 @@
+
+
+Inversão de controle significa que não é meu método main que instancia objetos, 
+quem se preocupa com a criação das instâncias é o Tomcat.
+
+O Tomcat só irá instanciar as servlets de acordo com a necessidade! Além disso, 
+ele instanciará apenas uma servlet de cada (singleton).
+
+o Tomcat só instancia a servlet quando realmente ocorre uma requisição. Isso é 
+o comportamento padrão que podemos alterar facilmente! A anotação @WebServlet 
+possui um atributo loadOnStartup que muda esse comportamento:
+------------------------------------------------------------
+@WebServlet(urlPatterns="/oi", loadOnStartup=1)
+public class OiMundoServlet extends HttpServlet {
+
+
+    public OiMundoServlet() {
+        System.out.println("Criando Oi Mundo Servlet");
+    }
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+        //implementacao do metodo service omitida
+    }
+}
+---------------------------------------------------------
+Ao reiniciar o Tomcat será criado o objeto da servlet OiMundoServlet e consequentemente 
+aparece no console a mensagem definida no construtor. 
