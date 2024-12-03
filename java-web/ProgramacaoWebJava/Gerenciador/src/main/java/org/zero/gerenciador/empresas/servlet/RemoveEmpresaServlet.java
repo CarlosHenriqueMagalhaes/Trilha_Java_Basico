@@ -1,4 +1,4 @@
-package org.zero.gerenciador.empresas;
+package org.zero.gerenciador.empresas.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.zero.gerenciador.empresas.modelo.BancoDeDadosGenerico;
 
 @WebServlet("/removeEmpresa")
 public class RemoveEmpresaServlet extends HttpServlet {

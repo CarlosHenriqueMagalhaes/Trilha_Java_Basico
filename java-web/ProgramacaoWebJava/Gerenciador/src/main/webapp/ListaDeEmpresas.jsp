@@ -1,4 +1,4 @@
-<%@ page import="java.util.List , org.zero.gerenciador.empresas.Empresa"%>
+<%@ page import="java.util.List ,org.zero.gerenciador.empresas.modelo.Empresa"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 

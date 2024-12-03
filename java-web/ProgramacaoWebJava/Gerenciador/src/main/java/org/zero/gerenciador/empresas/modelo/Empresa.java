@@ -1,4 +1,4 @@
-package org.zero.gerenciador.empresas;
+package org.zero.gerenciador.empresas.modelo;
 
 import java.util.Date;
 

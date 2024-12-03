@@ -1,10 +1,8 @@
-package org.zero.gerenciador.empresas;
+package org.zero.gerenciador.empresas.modelo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import org.apache.catalina.webresources.EmptyResourceSet;
 
 public class BancoDeDadosGenerico {
 
@@ -49,12 +47,12 @@ public class BancoDeDadosGenerico {
 
 	public Empresa buscaEmpresaPeloId(int id) {
 		for (Empresa empresa : listaDeEmpresa) {
-			if(empresa.getId()==id) {
+			if (empresa.getId() == id) {
 				return empresa;
 			}
-			
+
 		}
 		return null;
-		
+
 	}
 }
