@@ -1,4 +1,4 @@
-package org.zero.gerenciador.empresas.servlet;
+package org.zero.gerenciador.empresas.acoes;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -6,25 +6,22 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.zero.gerenciador.empresas.modelo.BancoDeDadosGenerico;
 import org.zero.gerenciador.empresas.modelo.Empresa;
 
-@WebServlet("/novaEmpresa")
-public class NovaEmpresaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		System.out.println("Cadastrando nova empresa!");
-
+public class AlteraEmpresa {
+	public void executaAlteraEmpresa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		
 		String nomeEmpresa = request.getParameter("nome");
 		String paramDataAbertura = request.getParameter("data");
+		String paramId = request.getParameter("id");
+		int id = Integer.valueOf(paramId);
 
+		System.out.println("Alterando empresa " + id );
+		
 		Date dataAbertura = null;
 
 		try {
@@ -34,15 +31,11 @@ public class NovaEmpresaServlet extends HttpServlet {
 			throw new ServletException(e);
 		}
 
-		Empresa empresa = new Empresa();
+		BancoDeDadosGenerico banco = new BancoDeDadosGenerico();
+		Empresa empresa = banco.buscaEmpresaPeloId(id);
 		empresa.setNome(nomeEmpresa);
 		empresa.setDataAbertura(dataAbertura);
 
-		BancoDeDadosGenerico banco = new BancoDeDadosGenerico();
-		banco.adiciona(empresa);
-
-		response.sendRedirect("listaEmpresas");
-
+		response.sendRedirect("principal?acao=ListaEmpresas");
 	}
-
 }
