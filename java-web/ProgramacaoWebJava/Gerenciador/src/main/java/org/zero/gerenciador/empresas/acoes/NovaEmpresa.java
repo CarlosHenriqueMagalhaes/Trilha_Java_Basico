@@ -14,7 +14,7 @@ import org.zero.gerenciador.empresas.modelo.Empresa;
 
 public class NovaEmpresa {
 
-	public void executaCadastraNovaEmpresa(HttpServletRequest request, HttpServletResponse response)
+	public String executaCadastraNovaEmpresa(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		System.out.println("Cadastrando nova empresa!");
@@ -38,7 +38,7 @@ public class NovaEmpresa {
 		BancoDeDadosGenerico banco = new BancoDeDadosGenerico();
 		banco.adiciona(empresa);
 
-		response.sendRedirect("principal?acao=ListaEmpresas");
+		return "redirect:principal?acao=ListaEmpresas";
 
 	}
 

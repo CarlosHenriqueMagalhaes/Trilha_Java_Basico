@@ -13,15 +13,16 @@ import org.zero.gerenciador.empresas.modelo.BancoDeDadosGenerico;
 import org.zero.gerenciador.empresas.modelo.Empresa;
 
 public class AlteraEmpresa {
-	public void executaAlteraEmpresa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		
+	public String executaAlteraEmpresa(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+
 		String nomeEmpresa = request.getParameter("nome");
 		String paramDataAbertura = request.getParameter("data");
 		String paramId = request.getParameter("id");
 		int id = Integer.valueOf(paramId);
 
-		System.out.println("Alterando empresa " + id );
-		
+		System.out.println("Alterando empresa " + id);
+
 		Date dataAbertura = null;
 
 		try {
@@ -36,6 +37,6 @@ public class AlteraEmpresa {
 		empresa.setNome(nomeEmpresa);
 		empresa.setDataAbertura(dataAbertura);
 
-		response.sendRedirect("principal?acao=ListaEmpresas");
+		return "redirect:principal?acao=ListaEmpresas";
 	}
 }

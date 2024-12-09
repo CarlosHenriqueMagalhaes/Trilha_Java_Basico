@@ -1,6 +1,8 @@
 package org.zero.gerenciador.empresas.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,26 +25,35 @@ public class ServletPrincipal extends HttpServlet {
 			throws ServletException, IOException {
 
 		String paramAcao = request.getParameter("acao");
+		String nome = null;
 
 		if (paramAcao.equals("ListaEmpresas")) {
 			ListaEmpresas acao = new ListaEmpresas();
-			acao.executaListagemEmpresas(request, response);
+			nome = acao.executaListagemEmpresas(request, response);
 
 		} else if (paramAcao.equals("MostraEmpresa")) {
 			MostraEmpresa acao = new MostraEmpresa();
-			acao.executaMostrarEmpresa(request, response);
+			nome = acao.executaMostrarEmpresa(request, response);
 
 		} else if (paramAcao.equals("RemovaEmpresa")) {
 			RemovaEmpresa acao = new RemovaEmpresa();
-			acao.executaRemovaEmpresa(request, response);
+			nome = acao.executaRemovaEmpresa(request, response);
 
 		} else if (paramAcao.equals("AlteraEmpresa")) {
 			AlteraEmpresa acao = new AlteraEmpresa();
-			acao.executaAlteraEmpresa(request, response);
+			nome = acao.executaAlteraEmpresa(request, response);
 
 		} else if (paramAcao.equals("NovaEmpresa")) {
 			NovaEmpresa acao = new NovaEmpresa();
-			acao.executaCadastraNovaEmpresa(request, response);
+			nome = acao.executaCadastraNovaEmpresa(request, response);
+		}
+
+		String[] tipoEEndereco = nome.split(":");
+		if (tipoEEndereco[0].equals("forward")) {
+			RequestDispatcher despachar = request.getRequestDispatcher(tipoEEndereco[1]);
+			despachar.forward(request, response);
+		} else {
+			response.sendRedirect(tipoEEndereco[1]);
 		}
 	}
 }
