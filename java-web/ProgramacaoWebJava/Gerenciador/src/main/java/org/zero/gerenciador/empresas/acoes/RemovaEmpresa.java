@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.zero.gerenciador.empresas.modelo.BancoDeDadosGenerico;
 
 public class RemovaEmpresa {
-	public String executaRemovaEmpresa(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		System.out.println("Removendo empresa");
 

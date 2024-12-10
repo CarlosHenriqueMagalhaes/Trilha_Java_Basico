@@ -10,7 +10,7 @@ import org.zero.gerenciador.empresas.modelo.BancoDeDadosGenerico;
 import org.zero.gerenciador.empresas.modelo.Empresa;
 
 public class MostraEmpresa {
-	public String executaMostrarEmpresa(HttpServletRequest request, HttpServletResponse response)
+	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		System.out.println("mostrando empresa");

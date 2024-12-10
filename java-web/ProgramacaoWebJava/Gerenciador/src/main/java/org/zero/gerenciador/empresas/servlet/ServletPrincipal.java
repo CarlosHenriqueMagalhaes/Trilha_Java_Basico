@@ -31,26 +31,27 @@ public class ServletPrincipal extends HttpServlet {
 
 		if (paramAcao.equals("ListaEmpresas")) {
 			ListaEmpresas acao = new ListaEmpresas();
-			nome = acao.executaListagemEmpresas(request, response);
+			nome = acao.executa(request, response);
 
 		} else if (paramAcao.equals("MostraEmpresa")) {
 			MostraEmpresa acao = new MostraEmpresa();
-			nome = acao.executaMostrarEmpresa(request, response);
+			nome = acao.executa(request, response);
 
 		} else if (paramAcao.equals("RemovaEmpresa")) {
 			RemovaEmpresa acao = new RemovaEmpresa();
-			nome = acao.executaRemovaEmpresa(request, response);
+			nome = acao.executa(request, response);
 
 		} else if (paramAcao.equals("AlteraEmpresa")) {
 			AlteraEmpresa acao = new AlteraEmpresa();
-			nome = acao.executaAlteraEmpresa(request, response);
+			nome = acao.executa(request, response);
 
 		} else if (paramAcao.equals("NovaEmpresa")) {
 			NovaEmpresa acao = new NovaEmpresa();
-			nome = acao.executaCadastraNovaEmpresa(request, response);
+			nome = acao.executa(request, response);
+			
 		} else if (paramAcao.equals("FormularioNovaEmpresa")) {
 			FormularioNovaEmpresa acao = new FormularioNovaEmpresa();
-			nome = acao.executaFormulario(request, response);
+			nome = acao.executa(request, response);
 		}
 
 		String[] tipoEEndereco = nome.split(":");

@@ -14,7 +14,7 @@ import org.zero.gerenciador.empresas.modelo.Empresa;
 
 public class NovaEmpresa {
 
-	public String executaCadastraNovaEmpresa(HttpServletRequest request, HttpServletResponse response)
+	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		System.out.println("Cadastrando nova empresa!");

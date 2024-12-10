@@ -13,7 +13,7 @@ import org.zero.gerenciador.empresas.modelo.BancoDeDadosGenerico;
 import org.zero.gerenciador.empresas.modelo.Empresa;
 
 public class AlteraEmpresa {
-	public String executaAlteraEmpresa(HttpServletRequest request, HttpServletResponse response)
+	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 
 		String nomeEmpresa = request.getParameter("nome");
