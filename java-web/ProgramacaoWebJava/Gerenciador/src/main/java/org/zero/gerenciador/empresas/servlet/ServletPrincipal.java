@@ -9,12 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.zero.gerenciador.empresas.acoes.AlteraEmpresa;
-import org.zero.gerenciador.empresas.acoes.FormularioNovaEmpresa;
-import org.zero.gerenciador.empresas.acoes.ListaEmpresas;
-import org.zero.gerenciador.empresas.acoes.MostraEmpresa;
-import org.zero.gerenciador.empresas.acoes.NovaEmpresa;
-import org.zero.gerenciador.empresas.acoes.RemovaEmpresa;
+import org.zero.gerenciador.empresas.acoes.Acao;
 
 //acesso http://localhost:8080/gerenciador/principal?acao=ListaEmpresas
 //acesso para cadastrar uma nova empresa http://localhost:8080/gerenciador/formNovaEmpresa.jsp
@@ -27,31 +22,16 @@ public class ServletPrincipal extends HttpServlet {
 			throws ServletException, IOException {
 
 		String paramAcao = request.getParameter("acao");
-		String nome = null;
 
-		if (paramAcao.equals("ListaEmpresas")) {
-			ListaEmpresas acao = new ListaEmpresas();
+		String nomeClasse = ("org.zero.gerenciador.empresas.acoes." + paramAcao);
+		String nome;
+		try {
+			Class classe = Class.forName(nomeClasse); // carrega a classe com o nome
+			Acao acao = (Acao) classe.newInstance();
 			nome = acao.executa(request, response);
-
-		} else if (paramAcao.equals("MostraEmpresa")) {
-			MostraEmpresa acao = new MostraEmpresa();
-			nome = acao.executa(request, response);
-
-		} else if (paramAcao.equals("RemovaEmpresa")) {
-			RemovaEmpresa acao = new RemovaEmpresa();
-			nome = acao.executa(request, response);
-
-		} else if (paramAcao.equals("AlteraEmpresa")) {
-			AlteraEmpresa acao = new AlteraEmpresa();
-			nome = acao.executa(request, response);
-
-		} else if (paramAcao.equals("NovaEmpresa")) {
-			NovaEmpresa acao = new NovaEmpresa();
-			nome = acao.executa(request, response);
-			
-		} else if (paramAcao.equals("FormularioNovaEmpresa")) {
-			FormularioNovaEmpresa acao = new FormularioNovaEmpresa();
-			nome = acao.executa(request, response);
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IOException
+				| ServletException e) {
+			throw new ServletException(e);
 		}
 
 		String[] tipoEEndereco = nome.split(":");
@@ -61,5 +41,6 @@ public class ServletPrincipal extends HttpServlet {
 		} else {
 			response.sendRedirect(tipoEEndereco[1]);
 		}
+
 	}
 }

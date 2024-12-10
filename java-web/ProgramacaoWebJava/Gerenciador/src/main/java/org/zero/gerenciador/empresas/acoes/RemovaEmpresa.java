@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.zero.gerenciador.empresas.modelo.BancoDeDadosGenerico;
 
-public class RemovaEmpresa {
+public class RemovaEmpresa implements Acao {
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		System.out.println("Removendo empresa");
