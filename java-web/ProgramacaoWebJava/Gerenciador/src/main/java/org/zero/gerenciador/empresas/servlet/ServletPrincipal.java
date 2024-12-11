@@ -14,6 +14,7 @@ import org.zero.gerenciador.empresas.acoes.Acao;
 //acesso http://localhost:8080/gerenciador/principal?acao=ListaEmpresas
 //acesso para cadastrar uma nova empresa http://localhost:8080/gerenciador/formNovaEmpresa.jsp
 //acesso http://localhost:8080/gerenciador/principal?acao=FormularioNovaEmpresa
+//acesso ao login  http://localhost:8080/gerenciador/principal?acao=LoginForm
 @WebServlet("/principal")
 public class ServletPrincipal extends HttpServlet {
 	private static final long serialVersionUID = 1L;

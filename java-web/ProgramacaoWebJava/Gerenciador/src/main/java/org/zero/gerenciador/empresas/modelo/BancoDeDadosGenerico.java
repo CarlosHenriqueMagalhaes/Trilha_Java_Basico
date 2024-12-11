@@ -5,7 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class BancoDeDadosGenerico {
-
+	
+	private static List<Usuario> listaDeUsuarios = new ArrayList<Usuario>();
+	
 	private static List<Empresa> listaDeEmpresa = new ArrayList<Empresa>();
 	private static int chaveSequencial = 1;
 
@@ -15,6 +17,20 @@ public class BancoDeDadosGenerico {
 		empresaPadrao.setNome("Alquimech ltda.");
 		empresaPadrao.setId(chaveSequencial++);
 		listaDeEmpresa.add(empresaPadrao);
+	}
+	
+	// O Server já inicializa com os segunintes Usuarios no banco:
+	static {
+	Usuario u1 = new Usuario();
+    u1.setLogin("Felipe");
+    u1.setSenha("12345");
+
+    Usuario u2 = new Usuario();
+    u2.setLogin("Ana");
+    u2.setSenha("54321");
+
+    listaDeUsuarios.add(u1);
+    listaDeUsuarios.add(u2);
 	}
 
 	public void adiciona(Empresa empresa) {
