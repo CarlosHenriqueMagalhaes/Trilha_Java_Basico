@@ -5,12 +5,20 @@
 
 <!DOCTYPE hmtl>
 <html>
+
 <head>
 <meta charset="ISO-8859-1">
 <title>Java Standard Taglib</title>
-
 </head>
+
 <body>
+
+	Usuario Logado: ${usuarioLogado.login }
+
+	<br>
+	<br>
+	<br>
+
 	<c:if test="${not empty empresa}">
 	Empresa ${ empresa } foi cadastrada com sucesso!
 	</c:if>
@@ -21,9 +29,10 @@
 	<ul>
 		<c:forEach items="${ listaDeEmpresasCadastradas }" var="empresa">
 			<li>${ empresa.nome }-<fmt:formatDate
-					value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy" /> 
-				<a href="/gerenciador/principal?acao=MostraEmpresa&id=${ empresa.id }">edita</a>
-				<a href="/gerenciador/principal?acao=RemovaEmpresa&id=${ empresa.id }">remove</a>
+					value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy" /> <a
+				href="/gerenciador/principal?acao=MostraEmpresa&id=${ empresa.id }">edita</a>
+				<a
+				href="/gerenciador/principal?acao=RemovaEmpresa&id=${ empresa.id }">remove</a>
 			</li>
 		</c:forEach>
 	</ul>
