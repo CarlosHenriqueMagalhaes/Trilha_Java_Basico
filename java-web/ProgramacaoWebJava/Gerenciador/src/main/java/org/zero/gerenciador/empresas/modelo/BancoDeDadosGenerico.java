@@ -17,6 +17,11 @@ public class BancoDeDadosGenerico {
 		empresaPadrao.setNome("Alquimech ltda.");
 		empresaPadrao.setId(chaveSequencial++);
 		listaDeEmpresa.add(empresaPadrao);
+		
+		Empresa empresaPadrao2 = new Empresa();
+		empresaPadrao2.setNome("The Covil");
+		empresaPadrao2.setId(chaveSequencial++);
+		listaDeEmpresa.add(empresaPadrao2);
 	}
 
 	// O Server já inicializa com os segunintes Usuarios no banco:
