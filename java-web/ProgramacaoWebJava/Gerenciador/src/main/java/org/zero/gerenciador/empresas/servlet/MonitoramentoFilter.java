@@ -1,3 +1,8 @@
+/* O filtro consegue parar a execução, já que ele vem como uma camada à frente da aplicação.
+ Essa é a diferença que podemos ver no nosso código, através do parâmetro
+ FilterChain. Usamos o FilterChain para mandar a requisição para frente.
+ */
+
 package org.zero.gerenciador.empresas.servlet;
 
 import java.io.IOException;
@@ -15,18 +20,18 @@ public class MonitoramentoFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-	
+
 		long antes = System.currentTimeMillis();
-		
+
 		String acao = request.getParameter("acao");
-		
-		//executa ação:
+
+		// executa ação:
 		chain.doFilter(request, response);
-		
+
 		long depois = System.currentTimeMillis();
-		
- 		System.out.println("Tempo de execução da ação: " + acao + " -> " + (antes - depois));
-		
+
+		System.out.println("Tempo de execução da ação: " + acao + " -> " + (antes - depois));
+
 	}
 
 }
