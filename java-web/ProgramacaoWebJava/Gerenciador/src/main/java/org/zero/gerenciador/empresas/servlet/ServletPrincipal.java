@@ -21,18 +21,7 @@ public class ServletPrincipal extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		HttpSession sessao = request.getSession();
-		
 		String paramAcao = request.getParameter("acao");
-		
-		boolean usuarioNaoEstaLogado = (sessao.getAttribute("usuarioLogado") == null);//para auxiliar a condição que verifica se o usuario esta logado
-		boolean acaoProtegida =!(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));//garante que apenas as paginas Login e LoginForm não sejam protegidas
-		
-		if (usuarioNaoEstaLogado && acaoProtegida) {
-			response.sendRedirect("principal?acao=LoginForm");
-			return;
-		}
 
 		String nomeClasse = ("org.zero.gerenciador.empresas.acoes." + paramAcao);
 		String nome;
