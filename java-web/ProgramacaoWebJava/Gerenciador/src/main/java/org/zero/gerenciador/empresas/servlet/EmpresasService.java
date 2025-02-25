@@ -13,6 +13,7 @@ import org.zero.gerenciador.empresas.modelo.BancoDeDadosGenerico;
 import org.zero.gerenciador.empresas.modelo.Empresa;
 
 import com.google.gson.Gson;
+//import com.thoughtworks.xstream.XStream;
 
 @WebServlet("/empresas")
 public class EmpresasService extends HttpServlet {
@@ -22,7 +23,7 @@ public class EmpresasService extends HttpServlet {
 			throws ServletException, IOException {
 
 		List<Empresa> empresas = new BancoDeDadosGenerico().getEmpresas();
-
+		
 		// A biblioteca Gson trabalha com JSON
 		// Foi adicionado a biblioteca na lib em WEB-INF (gson-2.8.5.jar)
 		Gson gson = new Gson();
@@ -30,6 +31,19 @@ public class EmpresasService extends HttpServlet {
 
 		response.setContentType("application/json");
 		response.getWriter().print(json);
+		
+		/*
+		// O método abaixo é usado para trabalhar com XML.
+		//A biblioteca XStream trabalha com XML
+		XStream xstream = new XStream();
+		// toda vez que a biblioteca encontrar um objeto do tipo Empresa, ele escreverá apenas empresa:
+		xstream.alias("empresa", Empresa.class);
+		String xml = xstream.toXML(empresas); 
+
+		response.setContentType("application/xml");
+		response.getWriter().print(xml);
+				
+		 */
 
 	}
 
