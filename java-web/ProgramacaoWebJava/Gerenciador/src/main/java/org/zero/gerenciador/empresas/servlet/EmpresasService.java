@@ -28,16 +28,7 @@ public class EmpresasService extends HttpServlet {
 		Gson gson = new Gson();
 		String json = gson.toJson(empresas);
 
-		// Quando o navegador ou o celular fazem uma chamada para nosso Web Service,
-		// eles esperam, na resposta, um cabeçalho específico que define qual o conteúdo
-		// dessa resposta. Esse conteúdo pode variar: pode ser um HTML, um JSON, um XML
-		// ou mesmo um PDF, dependendo do que escrevemos na resposta.
-		// Para implementarmos um serviço bem refinado, iremos definir na resposta que o
-		// usuário está recebendo um JSON. Isso não era necessário quando estávamos trabalhando
-		// com JSP, pois ele faz isso de maneira automática.:
 		response.setContentType("application/json");
-
-		// Para devolvermos o JSON:
 		response.getWriter().print(json);
 
 	}
