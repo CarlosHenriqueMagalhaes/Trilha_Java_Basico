@@ -13,6 +13,7 @@ import org.zero.gerenciador.empresas.modelo.BancoDeDadosGenerico;
 import org.zero.gerenciador.empresas.modelo.Empresa;
 
 import com.google.gson.Gson;
+import com.thoughtworks.xstream.XStream;
 //import com.thoughtworks.xstream.XStream;
 
 @WebServlet("/empresas")
@@ -23,27 +24,32 @@ public class EmpresasService extends HttpServlet {
 			throws ServletException, IOException {
 
 		List<Empresa> empresas = new BancoDeDadosGenerico().getEmpresas();
-		
-		// A biblioteca Gson trabalha com JSON
-		// Foi adicionado a biblioteca na lib em WEB-INF (gson-2.8.5.jar)
-		Gson gson = new Gson();
-		String json = gson.toJson(empresas);
 
-		response.setContentType("application/json");
-		response.getWriter().print(json);
+		String valor = request.getHeader("Accept");
 		
-		/*
-		// O método abaixo é usado para trabalhar com XML.
-		//A biblioteca XStream trabalha com XML
-		XStream xstream = new XStream();
-		// toda vez que a biblioteca encontrar um objeto do tipo Empresa, ele escreverá apenas empresa:
-		xstream.alias("empresa", Empresa.class);
-		String xml = xstream.toXML(empresas); 
+// não funciona a parte xml por conta da compatibilidade do Xstream que ficou defasado perante a nova atualização do
+//TOMCAT esse codigo era para devolver ou em json, ou xml...
+		
+//		if (valor.contains("xml")) {
+//			XStream xstream = new XStream();
+//			xstream.alias("empresa", Empresa.class);
+//			String xml = xstream.toXML(empresas);
+//
+//			response.setContentType("application/xml");
+//			response.getWriter().print(xml);
+//
+//		} else 
+			if (valor.endsWith("json")) {
+			Gson gson = new Gson();
+			String json = gson.toJson(empresas);
 
-		response.setContentType("application/xml");
-		response.getWriter().print(xml);
-				
-		 */
+			response.setContentType("application/json");
+			response.getWriter().print(json);
+
+		} else {
+			response.setContentType("application/json");
+			response.getWriter().print("{'message':'no content'}");
+		}
 
 	}
 
