@@ -18,10 +18,12 @@ import javax.servlet.annotation.WebFilter;
 @WebFilter("/principal")
 public class MonitoramentoFilter implements Filter {
 	
+	//para o jetty
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 	}
 
+	//para o jetty
 	@Override
 	public void destroy() {
 	}

@@ -17,10 +17,12 @@ import javax.servlet.http.HttpSession;
 @WebFilter("/principal")
 public class AutorizacaoFilter extends HttpFilter implements Filter {
 
+	//para o jetty
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 	}
 
+	//para o jetty
 	@Override
 	public void destroy() {
 	}
