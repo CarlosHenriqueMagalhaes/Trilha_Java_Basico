@@ -1,0 +1,26 @@
+Usado na classe Main em sinopse:
+
+/*
+Text Block
+Introduzido na versão 15 do Java, o Text Block é uma nova forma de representar
+Strings que facilitam a escrita de textos com múltiplas linhas.
+Em vez de utilizar aspas duplas para delimitar o texto e inserir quebras de linha
+manualmente, ou utilizar concatenações, é possível utilizar uma sintaxe mais simples
+ que permite inserir o texto exatamente como ele é.
+
+Sintaxe do Text Block
+Para criar um Text Block em Java, basta utilizar três aspas duplas para delimitar o texto,
+ seguidas de uma quebra de linha. Por exemplo:
+
+String mensagem = """
+                  Olá, mundo!
+                  Este é um Text Block.
+                  Ele permite escrever textos com múltiplas linhas
+                  sem precisar usar caracteres de escape ou quebras de linha manualmente
+                  ou concatenações.
+                  """;
+
+Nesse exemplo, a variável mensagem recebe um Text Block com o texto "Olá, mundo!
+Este é um Text Block. Ele permite escrever textos com múltiplas linhas sem precisar
+usar caracteres de escape ou quebras de linha manualmente!".
+ */
